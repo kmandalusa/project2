@@ -64,7 +64,7 @@ public class PriceGuide {
 
 	@Override
 	public String toString() {
-		return "PriceGuide [numberBeds=" + numberBeds + ", isSmoking=" + isSmoking + ", pricePerDay=" + pricePerDay
+		return "PriceGuide [numberBeds=" + numberBeds + ", isSmoking=" + isSmoking + ", pricePerDay=$" + pricePerDay
 				+ "]";
 	}
 }
