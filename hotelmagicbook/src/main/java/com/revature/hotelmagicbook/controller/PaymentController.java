@@ -17,11 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.hotelmagicbook.model.Payment;
 import com.revature.hotelmagicbook.service.PaymentService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author Dipanjali Ghosh
  *
  */
 @RestController
+@Slf4j
 public class PaymentController {
 
 	@Autowired
@@ -29,6 +32,7 @@ public class PaymentController {
 
 	@GetMapping("/payments")
 	public List<Payment> getPayments() {
+		log.info("Getting all the records in the Payments database.");
 		return paymentService.findAll();
 	}
 

@@ -18,38 +18,42 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.hotelmagicbook.model.Reservation;
 import com.revature.hotelmagicbook.service.ReservationService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author Dipanjali Ghosh
  *
  */
 @RestController
+@Slf4j
 public class ReservationController {
 
 	@Autowired
 	ReservationService reservationService;
 
 	@GetMapping("/reservations")
-	public List<Reservation> getRooms() {
+	public List<Reservation> getReservations() {
+		log.info("Getting all the records in the Reservations database.");
 		return reservationService.findAll();
 	}
 
 	@GetMapping("/reservations/{id}")
-	public Reservation getRoomById(@PathVariable int id) {
+	public Reservation getReservationById(@PathVariable int id) {
 		return reservationService.findById(id);
 	}
 	
 	@GetMapping("/reservations/searchByCustomer/{customerId}")
-	public List<Reservation> getRoomsBySize(@PathVariable int customerId) {
+	public List<Reservation> getReservationsByCustomer(@PathVariable int customerId) {
 		return reservationService.findReservationsByCustomer(customerId);
 	}
 	
 	@GetMapping("/reservations/searchPaidFor/{paidFor}")
-	public List<Reservation> getRoomsWithSmoke(@PathVariable boolean paidFor) {
+	public List<Reservation> getReservationsPaidFor(@PathVariable boolean paidFor) {
 		return reservationService.findReservationsPaidFor(paidFor);
 	}
 	
 	@GetMapping("/reservations/searchByRoom/{roomId}")
-	public List<Reservation> getRoomsByType(@PathVariable int roomId) {
+	public List<Reservation> getReservationsByType(@PathVariable int roomId) {
 		return reservationService.findReservationsByRoom(roomId);
 	}
 	
@@ -59,17 +63,17 @@ public class ReservationController {
 	}
 
 	@PostMapping("/reservations")
-	public void saveRoom(@RequestBody Reservation reservation) {
+	public void saveReservation(@RequestBody Reservation reservation) {
 		reservationService.save(reservation);
 	}
 
 	@PutMapping("/reservations/{id}")
-	public void editRoom(@PathVariable int id, @RequestBody Reservation reservation) {
+	public void editReservation(@PathVariable int id, @RequestBody Reservation reservation) {
 		reservationService.save(reservation);
 	}
 
 	@DeleteMapping("/reservations/{id}")
-	public void deleteRoomById(@PathVariable int id) {
+	public void deleteReservationById(@PathVariable int id) {
 		reservationService.delete(id);
 	}
 }

@@ -17,11 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.hotelmagicbook.model.Room;
 import com.revature.hotelmagicbook.service.RoomService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author Dipanjali Ghosh
  *
  */
 @RestController
+@Slf4j
 public class RoomController {
 
 	@Autowired
@@ -29,6 +32,7 @@ public class RoomController {
 
 	@GetMapping("/rooms")
 	public List<Room> getRooms() {
+		log.info("Getting all the records in the Rooms database.");
 		return roomService.findAll();
 	}
 

@@ -15,11 +15,14 @@ import com.revature.hotelmagicbook.model.PriceGuide;
 import com.revature.hotelmagicbook.service.PriceGuideService;
 import com.revature.hotelmagicbook.util.PriceGuideID;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author Dipanjali Ghosh
  *
  */
 @RestController
+@Slf4j
 public class PriceGuideController {
 
 	@Autowired
@@ -27,6 +30,7 @@ public class PriceGuideController {
 
 	@GetMapping("/priceGuides")
 	public List<PriceGuide> getPrices() {
+		log.info("Getting all the records in the PriceGuides database.");
 		return priceGuideService.findAll();
 	}
 
