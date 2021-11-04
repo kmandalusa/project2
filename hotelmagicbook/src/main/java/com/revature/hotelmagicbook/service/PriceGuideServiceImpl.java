@@ -1,16 +1,13 @@
-/**
- * Implementing PriceGuideService
- */
 package com.revature.hotelmagicbook.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import javafx.util.Pair;
 import org.springframework.stereotype.Service;
 
-import com.revature.hotelmagicbook.model.PriceGuide;
 import com.revature.hotelmagicbook.repo.PriceGuideRepository;
+import com.revature.hotelmagicbook.util.PriceGuideID;
+import com.revature.hotelmagicbook.model.PriceGuide;
 
 /**
  * @author Dipanjali Ghosh
@@ -28,7 +25,7 @@ public class PriceGuideServiceImpl implements PriceGuideService {
 	}
 
 	@Override
-	public PriceGuide findById(Pair<Integer, Boolean> priceId) {
+	public PriceGuide findById(PriceGuideID priceId) {
 		return priceGuideRepository.getById(priceId);
 	}
 
@@ -39,15 +36,16 @@ public class PriceGuideServiceImpl implements PriceGuideService {
 	}
 
 	@Override
-	public void update(Pair<Integer, Boolean> priceId, PriceGuide priceGuide) {
+	public void update(PriceGuideID priceId, PriceGuide priceGuide) {
 		priceGuideRepository.save(priceGuide);
 
 	}
 
 	@Override
-	public void delete(Pair<Integer, Boolean> priceId) {
+	public void delete(PriceGuideID priceId) {
 		priceGuideRepository.deleteById(priceId);
 
 	}
 
 }
+

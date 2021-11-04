@@ -1,12 +1,8 @@
-/**
- * Controller class for Price Guide
- */
 package com.revature.hotelmagicbook.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import javafx.util.Pair;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.hotelmagicbook.model.PriceGuide;
 import com.revature.hotelmagicbook.service.PriceGuideService;
+import com.revature.hotelmagicbook.util.PriceGuideID;
 
 /**
  * @author Dipanjali Ghosh
@@ -35,7 +32,7 @@ public class PriceGuideController {
 
 	@GetMapping("/priceGuides/{numBeds}/{allowsSmoke}")
 	public PriceGuide getPriceById(@PathVariable("numBeds") int numBeds, @PathVariable("allowsSmoke") boolean allowsSmoke) {
-		Pair<Integer, Boolean> priceId = new Pair<Integer, Boolean>(numBeds, allowsSmoke);
+		PriceGuideID priceId = new PriceGuideID(numBeds, allowsSmoke);
 		return priceGuideService.findById(priceId);
 	}
 
@@ -51,7 +48,7 @@ public class PriceGuideController {
 
 	@DeleteMapping("/priceGuides/{numBeds}/{allowsSmoke}")
 	public void deletePriceGuideById(@PathVariable("numBeds") int numBeds, @PathVariable("allowsSmoke") boolean allowsSmoke) {
-		Pair<Integer, Boolean> priceId = new Pair<Integer, Boolean>(numBeds, allowsSmoke);
+		PriceGuideID priceId = new PriceGuideID(numBeds, allowsSmoke);
 		priceGuideService.delete(priceId);
 	}
 }

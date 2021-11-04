@@ -1,6 +1,3 @@
-/**
- * Model Class for the Price Guide table
- */
 package com.revature.hotelmagicbook.model;
 
 import java.math.BigDecimal;
@@ -8,15 +5,18 @@ import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
+
+import com.revature.hotelmagicbook.util.PriceGuideID;
 
 /**
  * @author Dipanjali Ghosh
  *
  */
 @Entity
+@IdClass(PriceGuideID.class)
 @Table(name = "p2_price_guide")
-//@Data // Lombok annotation intended to make the getter and setter methods easier to do.
 public class PriceGuide {
 	@Id
 	@Column(name = "number_beds")
