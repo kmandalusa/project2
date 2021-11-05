@@ -44,12 +44,12 @@ public class RoomController {
 	
 	@GetMapping("/rooms/searchSmoking/{smokes}")
 	public List<Room> getRoomsWithSmoke(@PathVariable boolean smokes) {
-		return roomService.findSmoking(smokes);
+		return roomService.findByIsSmoking(smokes);
 	}
 	
 	@GetMapping("/rooms/searchByType/{size}/{smokes}")
 	public List<Room> getRoomsByType(@PathVariable("size") int size, @PathVariable("smokes") boolean smokes) {
-		return roomService.findRoomsByType(size, smokes);
+		return roomService.findRoomsBySizeAndIsSmoking(size, smokes);
 	}
 
 	@PostMapping("/rooms")

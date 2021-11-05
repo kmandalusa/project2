@@ -41,20 +41,20 @@ public class RoomController {
 		return roomService.findById(id);
 	}
 	
-//	@GetMapping("/rooms/searchBySize/{size}")
-//	public List<Room> getRoomsBySize(@PathVariable int size) {
-//		return roomService.findBySize(size);
-//	}
-//	
-//	@GetMapping("/rooms/searchSmoking/{smokes}")
-//	public List<Room> getRoomsWithSmoke(@PathVariable boolean smokes) {
-//		return roomService.findSmoking(smokes);
-//	}
-//	
-//	@GetMapping("/rooms/searchByType/{size}/{smokes}")
-//	public List<Room> getRoomsByType(@PathVariable("size") int size, @PathVariable("smokes") boolean smokes) {
-//		return roomService.findRoomsByType(size, smokes);
-//	}
+	@GetMapping("/rooms/searchBySize/{size}")
+	public List<Room> getRoomsBySize(@PathVariable int size) {
+		return roomService.findBySize(size);
+	}
+	
+	@GetMapping("/rooms/searchSmoking/{smokes}")
+	public List<Room> getRoomsWithSmoke(@PathVariable boolean smokes) {
+		return roomService.findByIsSmoking(smokes);
+	}
+	
+	@GetMapping("/rooms/searchByType/{size}/{smokes}")
+	public List<Room> getRoomsByType(@PathVariable("size") int size, @PathVariable("smokes") boolean smokes) {
+		return roomService.findRoomsBySizeAndIsSmoking(size, smokes);
+	}
 
 	@PostMapping("/rooms")
 	public void saveRoom(@RequestBody Room room) {
