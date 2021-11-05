@@ -37,6 +37,13 @@ public class PriceGuide {
 		this.isSmoking = isSmoking;
 		this.pricePerDay = pricePerDay;
 	}
+	
+	public PriceGuide(PriceGuideID key, BigDecimal pricePerDay) {
+		super();
+		this.numberBeds = key.getNumberBeds();
+		this.isSmoking = key.isIsSmoking();
+		this.pricePerDay = pricePerDay;
+	}
 
 	public int getNumberBeds() {
 		return numberBeds;

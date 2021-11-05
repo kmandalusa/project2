@@ -21,20 +21,65 @@ public class PriceGuideID implements Serializable {
 
 	private int numberBeds;
 
-    private boolean is_smoking;
+    private boolean isSmoking;
 
     // default constructor
 
-    public PriceGuideID(int numberBeds, boolean is_smoking) {
+    public PriceGuideID(int numberBeds, boolean isSmoking) {
         this.numberBeds = numberBeds;
-        this.is_smoking = is_smoking;
+        this.isSmoking = isSmoking;
     }
-
+    
     // equals() and hashCode()
     
+	/**
+	 * @return the numberBeds
+	 */
+	public int getNumberBeds() {
+		return numberBeds;
+	}
+
+
+
+	/**
+	 * @param numberBeds the numberBeds to set
+	 */
+	public void setNumberBeds(int numberBeds) {
+		this.numberBeds = numberBeds;
+	}
+
+
+
+	/**
+	 * @return the is_smoking
+	 */
+	public boolean isIsSmoking() {
+		return isSmoking;
+	}
+
+
+
+	/**
+	 * @param is_smoking the is_smoking to set
+	 */
+	public void setIsSmoking(boolean isSmoking) {
+		this.isSmoking = isSmoking;
+	}
+
+
+
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(is_smoking, numberBeds);
+		return Objects.hash(isSmoking, numberBeds);
 	}
 
 	@Override
@@ -46,6 +91,6 @@ public class PriceGuideID implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		PriceGuideID other = (PriceGuideID) obj;
-		return is_smoking == other.is_smoking && numberBeds == other.numberBeds;
+		return isSmoking == other.isSmoking && numberBeds == other.numberBeds;
 	}
 }
