@@ -23,7 +23,7 @@ public interface RoomService {
 
 	public void delete(int id);
 
-	public List<Room> findBySize(int size);
+	public List<Room> findByRoomSize(int size);
 
 	public List<Room> findByIsSmoking(boolean isSmoking);
 
