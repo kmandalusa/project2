@@ -46,19 +46,19 @@ public class RoomServiceImpl implements RoomService {
 		roomRepository.deleteById(id);
 	}
 
-//	@Override
-//	public List<Room> findBySize(int size) {
-//		return roomRepository.findBySize(size);
-//	}
-//
-//	@Override
-//	public List<Room> findSmoking(boolean isSmoking) {
-//		return roomRepository.findSmoking(isSmoking);
-//	}
-//
-//	@Override
-//	public List<Room> findRoomsByType(int size, boolean isSmoking) {
-//		return roomRepository.findRoomsByType(size, isSmoking);
-//	}
+	@Override
+	public List<Room> findBySize(int size) {
+		return roomRepository.findBySize(size);
+	}
+
+	@Override
+	public List<Room> findByIsSmoking(boolean isSmoking) {
+		return roomRepository.findByIsSmoking(isSmoking);
+	}
+
+	@Override
+	public List<Room> findRoomsBySizeAndIsSmoking(int size, boolean isSmoking) {
+		return roomRepository.findRoomsBySizeAndIsSmoking(size, isSmoking);
+	}
 
 }
