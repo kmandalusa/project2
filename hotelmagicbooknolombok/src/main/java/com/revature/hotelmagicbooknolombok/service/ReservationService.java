@@ -15,7 +15,7 @@ import com.revature.hotelmagicbooknolombok.model.Reservation;
 public interface ReservationService {
 	public List<Reservation> findAll();
 
-	public Reservation findById(int id);
+	public Reservation findByReservationId(int id);
 
 	public void save(Reservation reservation);
 
