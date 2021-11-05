@@ -42,8 +42,8 @@ public class RoomController {
 	}
 	
 	@GetMapping("/rooms/searchBySize/{size}")
-	public List<Room> getRoomsBySize(@PathVariable int size) {
-		return roomService.findBySize(size);
+	public List<Room> getRoomsByRoomSize(@PathVariable int size) {
+		return roomService.findByRoomSize(size);
 	}
 	
 	@GetMapping("/rooms/searchSmoking/{smokes}")

@@ -47,8 +47,8 @@ public class RoomServiceImpl implements RoomService {
 	}
 
 	@Override
-	public List<Room> findBySize(int size) {
-		return roomRepository.findBySize(size);
+	public List<Room> findByRoomSize(int size) {
+		return roomRepository.findByRoomSize(size);
 	}
 
 	@Override
