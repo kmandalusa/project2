@@ -12,5 +12,7 @@ import com.revature.hotelmagicbooknolombok.model.Customer;
  *
  */
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-
+  public  Customer findByCustomerId(int id);
+	  
+  
 }

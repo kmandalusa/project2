@@ -22,13 +22,14 @@ public class CustomerServiceImpl implements CustomerService {
 	CustomerRepository customerRepository;
 	
 	@Override
+	
 	public List<Customer> findAll() {
 		return customerRepository.findAll();
 	}
 
 	@Override
-	public Customer findById(int id) {
-		return customerRepository.getById(id);
+	public Customer findByCustomerId(int id) {
+		return customerRepository.findByCustomerId(id);
 	}
 
 	@Override

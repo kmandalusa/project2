@@ -12,15 +12,17 @@ import com.revature.hotelmagicbooknolombok.model.Customer;
  *
  */
 public interface CustomerService {
-	
+
 	List<Customer> findAll();
-	
-	Customer findById(int id);
-	
+
+	Customer findByCustomerId(int id);
+
+	// Customer findById(int id);
+
 	void save(Customer customer);
-	
+
 	void update(int id, Customer customer);
-	
+
 	void delete(int id);
 
 }
