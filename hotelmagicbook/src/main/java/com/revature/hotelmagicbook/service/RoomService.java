@@ -23,9 +23,9 @@ public interface RoomService {
 
 	public void delete(int id);
 
-	public List<Room> findBySize(int size);
-
-	public List<Room> findSmoking(boolean isSmoking);
-
-	public List<Room> findRoomsByType(int size, boolean isSmoking);
+//	public List<Room> findBySize(int size);
+//
+//	public List<Room> findSmoking(boolean isSmoking);
+//
+//	public List<Room> findRoomsByType(int size, boolean isSmoking);
 }
