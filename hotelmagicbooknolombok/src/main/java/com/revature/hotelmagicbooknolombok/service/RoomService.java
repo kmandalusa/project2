@@ -27,5 +27,5 @@ public interface RoomService {
 
 	public List<Room> findByIsSmoking(boolean isSmoking);
 
-	public List<Room> findRoomsBySizeAndIsSmoking(int size, boolean isSmoking);
+	public List<Room> findRoomsByRoomSizeAndIsSmoking(int size, boolean isSmoking);
 }

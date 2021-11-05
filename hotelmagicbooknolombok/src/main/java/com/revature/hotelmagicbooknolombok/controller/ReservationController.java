@@ -49,7 +49,7 @@ public class ReservationController {
 	}
 	
 	@GetMapping("/reservations/searchByRoom/{roomId}")
-	public List<Reservation> getRoomsByType(@PathVariable int roomId) {
+	public List<Reservation> getRoomsByRoomSizeAndIsSmoking(@PathVariable int roomId) {
 		return reservationService.findReservationsByRoomId(roomId);
 	}
 	
