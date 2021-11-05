@@ -27,7 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer findById(int id) {
+	public Customer findByCustomerId(int id) {
 		return customerRepository.getById(id);
 	}
 
