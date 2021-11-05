@@ -6,6 +6,7 @@ package com.revature.hotelmagicbook.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.revature.hotelmagicbook.model.Room;
 import com.revature.hotelmagicbook.repo.RoomRepository;
@@ -14,6 +15,7 @@ import com.revature.hotelmagicbook.repo.RoomRepository;
  * @author Dipanjali Ghosh
  *
  */
+@Service
 public class RoomServiceImpl implements RoomService {
 
 	@Autowired
