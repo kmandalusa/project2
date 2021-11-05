@@ -50,20 +50,20 @@ public class ReservationServiceImpl implements ReservationService {
 		reservationRepository.deleteById(id);
 	}
 
-//	@Override
-//	public List<Reservation> findReservationsByCustomer(int customerId) {
-//		return reservationRepository.findReservationsByCustomer(customerId);
-//	}
-//
-//	@Override
-//	public List<Reservation> findReservationsByRoom(int roomId) {
-//		return reservationRepository.findReservationsByRoom(roomId);
-//	}
-//
-//	@Override
-//	public List<Reservation> findReservationsPaidFor(boolean isPaid) {
-//		return reservationRepository.findReservationsPaidFor(isPaid);
-//	}
+	@Override
+	public List<Reservation> findReservationsByCustomerId(int customerId) {
+		return reservationRepository.findReservationsByCustomerId(customerId);
+	}
+
+	@Override
+	public List<Reservation> findReservationsByRoomId(int roomId) {
+		return reservationRepository.findReservationsByRoomId(roomId);
+	}
+
+	@Override
+	public List<Reservation> findReservationsByPaidFor(boolean isPaid) {
+		return reservationRepository.findReservationsByPaidFor(isPaid);
+	}
 
 	@Override
 	public boolean findIfRoomBooked(int roomId, Date startDate, Date endDate) throws Exception {
@@ -73,38 +73,38 @@ public class ReservationServiceImpl implements ReservationService {
 					+ " This function requires the startDate to be before the endDate or the same day if User is staying for one day.");
 			throw new Exception("User start of reservation block not allowed to be after the end of the reservation block.");
 		}
-		//List<Reservation> reservations = reservationRepository.findReservationsByRoom(roomId);
-		List<Reservation> reservations = reservationRepository.findAll();
+		List<Reservation> reservations = reservationRepository.findReservationsByRoomId(roomId);
+		//List<Reservation> reservations = reservationRepository.findAll();
 		if(reservations.isEmpty()) // meaning no one has EVER booked in this hotel before
 		{
 			return false;
 		}
 		else
 		{
-			boolean[] toRemove = new boolean[reservations.size()];
-			for(int i = 0; i < reservations.size(); i++)
-			{
-				if(reservations.get(i).getRoomId() == roomId)
-				{
-					toRemove[i] = false;
-				}
-				else
-				{
-					toRemove[i] = true;
-				}
-			}
-			
-			for(int j = reservations.size()-1; j >= 0; j--)
-			{
-				if(toRemove[j])
-				{
-					reservations.remove(j);
-				}
-			}
-			if(reservations.isEmpty()) // meaning no one has EVER booked in this specific room before
-			{
-				return false;
-			}
+//			boolean[] toRemove = new boolean[reservations.size()];
+//			for(int i = 0; i < reservations.size(); i++)
+//			{
+//				if(reservations.get(i).getRoomId() == roomId)
+//				{
+//					toRemove[i] = false;
+//				}
+//				else
+//				{
+//					toRemove[i] = true;
+//				}
+//			}
+//			
+//			for(int j = reservations.size()-1; j >= 0; j--)
+//			{
+//				if(toRemove[j])
+//				{
+//					reservations.remove(j);
+//				}
+//			}
+//			if(reservations.isEmpty()) // meaning no one has EVER booked in this specific room before
+//			{
+//				return false;
+//			}
 			for(Reservation x : reservations)
 			{
 				if(startDate.after(x.getStartDate()) && startDate.before(x.getEndDate()))

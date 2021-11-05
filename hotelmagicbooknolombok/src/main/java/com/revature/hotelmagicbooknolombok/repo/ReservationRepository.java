@@ -15,11 +15,11 @@ import com.revature.hotelmagicbooknolombok.model.Reservation;
  *
  */
 public interface ReservationRepository extends JpaRepository<Reservation, Integer> {
-	public List<Reservation> findReservationsByCustomer(int customerId);
+	public List<Reservation> findReservationsByCustomerId(int customerId);
 	
-	public List<Reservation> findReservationsByRoom(int roomId);
+	public List<Reservation> findReservationsByRoomId(int roomId);
 	
-	public List<Reservation> findReservationsPaidFor(boolean isPaid);
+	public List<Reservation> findReservationsByPaidFor(boolean isPaid);
 	
 	public boolean findIfRoomBooked(int roomId, Date startDate, Date endDate);
 }
