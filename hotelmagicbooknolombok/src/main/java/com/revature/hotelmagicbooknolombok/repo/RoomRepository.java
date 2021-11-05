@@ -16,7 +16,7 @@ import com.revature.hotelmagicbooknolombok.model.Room;
 public interface RoomRepository extends JpaRepository<Room, Integer> {
 	public List<Room> findBySize(int size);
 	
-	public List<Room> findSmoking(boolean isSmoking);
+	public List<Room> findByIsSmoking(boolean isSmoking);
 	
-	public List<Room> findRoomsByType(int size, boolean isSmoking);
+	public List<Room> findRoomsBySizeAndIsSmoking(int size, boolean isSmoking);
 }

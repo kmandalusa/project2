@@ -50,13 +50,13 @@ public class RoomServiceImpl implements RoomService {
 	}
 
 	@Override
-	public List<Room> findSmoking(boolean isSmoking) {
-		return roomRepository.findSmoking(isSmoking);
+	public List<Room> findByIsSmoking(boolean isSmoking) {
+		return roomRepository.findByIsSmoking(isSmoking);
 	}
 
 	@Override
-	public List<Room> findRoomsByType(int size, boolean isSmoking) {
-		return roomRepository.findRoomsByType(size, isSmoking);
+	public List<Room> findRoomsBySizeAndIsSmoking(int size, boolean isSmoking) {
+		return roomRepository.findRoomsBySizeAndIsSmoking(size, isSmoking);
 	}
 
 }
