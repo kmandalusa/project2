@@ -23,11 +23,11 @@ public interface ReservationService {
 
 	public void delete(int id);
 	
-	public List<Reservation> findReservationsByCustomer(int customerId);
+//	public List<Reservation> findReservationsByCustomer(int customerId);
+//
+//	public List<Reservation> findReservationsByRoom(int roomId);
+//
+//	public List<Reservation> findReservationsPaidFor(boolean isPaid);
 
-	public List<Reservation> findReservationsByRoom(int roomId);
-
-	public List<Reservation> findReservationsPaidFor(boolean isPaid);
-
-	public boolean findIfRoomBooked(int roomId, Date startDate, Date endDate);
+	public boolean findIfRoomBooked(int roomId, Date startDate, Date endDate) throws Exception;
 }
