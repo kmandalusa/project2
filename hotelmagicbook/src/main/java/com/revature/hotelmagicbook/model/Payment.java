@@ -10,12 +10,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 /**
  * @author Dipanjali Ghosh
  *
  */
 @Entity
 @Table(name = "p2_payment")
+@JsonSerialize
 public class Payment {
 	@Id
 	@Column(name = "card_number")

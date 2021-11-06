@@ -10,12 +10,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 /**
  * @author Dipanjali Ghosh
  *
  */
 @Entity
 @Table(name = "p2_customers")
+@JsonSerialize
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

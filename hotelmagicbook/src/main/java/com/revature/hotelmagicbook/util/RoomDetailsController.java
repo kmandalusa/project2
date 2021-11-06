@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.revature.hotelmagicbook.model.PriceGuide;
 import com.revature.hotelmagicbook.model.Room;
 import com.revature.hotelmagicbook.service.PriceGuideService;
@@ -35,6 +36,7 @@ public class RoomDetailsController {
 	 * Internal class declared to put all the details needed for specific rooms in one object.
 	 * 
 	 * */
+	@JsonSerialize
 	private class RoomDetails{
 		Room room;
 		PriceGuide price;
