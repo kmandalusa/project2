@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.revature.hotelmagicbook.util.PriceGuideID;
 
 /**
@@ -17,6 +18,7 @@ import com.revature.hotelmagicbook.util.PriceGuideID;
 @Entity
 @IdClass(PriceGuideID.class)
 @Table(name = "p2_price_guide")
+@JsonSerialize
 public class PriceGuide {
 	@Id
 	@Column(name = "number_beds")

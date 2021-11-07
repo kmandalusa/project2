@@ -15,7 +15,7 @@ public interface CustomerService {
 	
 	List<Customer> findAll();
 	
-	Customer findById(int id);
+	Customer findByCustomerId(int id);
 	
 	void save(Customer customer);
 	

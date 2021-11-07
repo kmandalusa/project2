@@ -15,7 +15,7 @@ import com.revature.hotelmagicbook.model.Reservation;
 public interface ReservationService {
 	public List<Reservation> findAll();
 
-	public Reservation findById(int id);
+	public Reservation findByReservationId(int id);
 
 	public void save(Reservation reservation);
 
@@ -23,11 +23,11 @@ public interface ReservationService {
 
 	public void delete(int id);
 	
-//	public List<Reservation> findReservationsByCustomer(int customerId);
-//
-//	public List<Reservation> findReservationsByRoom(int roomId);
-//
-//	public List<Reservation> findReservationsPaidFor(boolean isPaid);
+	public List<Reservation> findReservationsByCustomerId(int customerId);
+
+	public List<Reservation> findReservationsByRoomId(int roomId);
+
+	public List<Reservation> findReservationsByPaidFor(boolean isPaid);
 
 	public boolean findIfRoomBooked(int roomId, Date startDate, Date endDate) throws Exception;
 }

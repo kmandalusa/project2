@@ -39,23 +39,23 @@ public class ReservationController {
 
 	@GetMapping("/reservations/{id}")
 	public Reservation getReservationById(@PathVariable int id) {
-		return reservationService.findById(id);
+		return reservationService.findByReservationId(id);
 	}
 	
-//	@GetMapping("/reservations/searchByCustomer/{customerId}")
-//	public List<Reservation> getReservationsByCustomer(@PathVariable int customerId) {
-//		return reservationService.findReservationsByCustomer(customerId);
-//	}
-//	
-//	@GetMapping("/reservations/searchPaidFor/{paidFor}")
-//	public List<Reservation> getReservationsPaidFor(@PathVariable boolean paidFor) {
-//		return reservationService.findReservationsPaidFor(paidFor);
-//	}
-//	
-//	@GetMapping("/reservations/searchByRoom/{roomId}")
-//	public List<Reservation> getReservationsByType(@PathVariable int roomId) {
-//		return reservationService.findReservationsByRoom(roomId);
-//	}
+	@GetMapping("/reservations/searchByCustomer/{customerId}")
+	public List<Reservation> getReservationsByCustomer(@PathVariable int customerId) {
+		return reservationService.findReservationsByCustomerId(customerId);
+	}
+	
+	@GetMapping("/reservations/searchPaidFor/{paidFor}")
+	public List<Reservation> getReservationsPaidFor(@PathVariable boolean paidFor) {
+		return reservationService.findReservationsByPaidFor(paidFor);
+	}
+	
+	@GetMapping("/reservations/searchByRoom/{roomId}")
+	public List<Reservation> getReservationsByType(@PathVariable int roomId) {
+		return reservationService.findReservationsByRoomId(roomId);
+	}
 	
 	@GetMapping("/reservations/reserved")
 	public boolean isRoomReserved(@RequestBody int roomId, @RequestBody Date startDate, @RequestBody Date endDate) throws Exception {

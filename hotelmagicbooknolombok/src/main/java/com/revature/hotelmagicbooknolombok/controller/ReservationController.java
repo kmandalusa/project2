@@ -35,26 +35,26 @@ public class ReservationController {
 
 	@GetMapping("/reservations/{id}")
 	public Reservation getRoomById(@PathVariable int id) {
-		return reservationService.findById(id);
+		return reservationService.findByReservationId(id);
 	}
 	
 	@GetMapping("/reservations/searchByCustomer/{customerId}")
 	public List<Reservation> getRoomsBySize(@PathVariable int customerId) {
-		return reservationService.findReservationsByCustomer(customerId);
+		return reservationService.findReservationsByCustomerId(customerId);
 	}
 	
 	@GetMapping("/reservations/searchPaidFor/{paidFor}")
 	public List<Reservation> getRoomsWithSmoke(@PathVariable boolean paidFor) {
-		return reservationService.findReservationsPaidFor(paidFor);
+		return reservationService.findReservationsByPaidFor(paidFor);
 	}
 	
 	@GetMapping("/reservations/searchByRoom/{roomId}")
-	public List<Reservation> getRoomsByType(@PathVariable int roomId) {
-		return reservationService.findReservationsByRoom(roomId);
+	public List<Reservation> getRoomsByRoomSizeAndIsSmoking(@PathVariable int roomId) {
+		return reservationService.findReservationsByRoomId(roomId);
 	}
 	
 	@GetMapping("/reservations/reserved")
-	public boolean isRoomReserved(@RequestBody int roomId, @RequestBody Date startDate, @RequestBody Date endDate) {
+	public boolean isRoomReserved(@RequestBody int roomId, @RequestBody Date startDate, @RequestBody Date endDate) throws Exception {
 		return reservationService.findIfRoomBooked(roomId, startDate, endDate);
 	}
 

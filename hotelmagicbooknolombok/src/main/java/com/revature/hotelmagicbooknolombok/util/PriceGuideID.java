@@ -21,20 +21,20 @@ public class PriceGuideID implements Serializable {
 
 	private int numberBeds;
 
-    private boolean is_smoking;
+    private boolean isSmoking;
 
     // default constructor
 
-    public PriceGuideID(int numberBeds, boolean is_smoking) {
+    public PriceGuideID(int numberBeds, boolean isSmoking) {
         this.numberBeds = numberBeds;
-        this.is_smoking = is_smoking;
+        this.isSmoking = isSmoking;
     }
 
     // equals() and hashCode()
     
 	@Override
 	public int hashCode() {
-		return Objects.hash(is_smoking, numberBeds);
+		return Objects.hash(isSmoking, numberBeds);
 	}
 
 	@Override
@@ -46,6 +46,6 @@ public class PriceGuideID implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		PriceGuideID other = (PriceGuideID) obj;
-		return is_smoking == other.is_smoking && numberBeds == other.numberBeds;
+		return isSmoking == other.isSmoking && numberBeds == other.numberBeds;
 	}
 }

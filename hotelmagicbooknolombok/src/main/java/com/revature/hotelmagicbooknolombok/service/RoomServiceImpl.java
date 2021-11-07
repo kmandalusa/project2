@@ -45,18 +45,18 @@ public class RoomServiceImpl implements RoomService {
 	}
 
 	@Override
-	public List<Room> findBySize(int size) {
-		return roomRepository.findBySize(size);
+	public List<Room> findByRoomSize(int size) {
+		return roomRepository.findByRoomSize(size);
 	}
 
 	@Override
-	public List<Room> findSmoking(boolean isSmoking) {
-		return roomRepository.findSmoking(isSmoking);
+	public List<Room> findByIsSmoking(boolean isSmoking) {
+		return roomRepository.findByIsSmoking(isSmoking);
 	}
 
 	@Override
-	public List<Room> findRoomsByType(int size, boolean isSmoking) {
-		return roomRepository.findRoomsByType(size, isSmoking);
+	public List<Room> findRoomsByRoomSizeAndIsSmoking(int size, boolean isSmoking) {
+		return roomRepository.findRoomsByRoomSizeAndIsSmoking(size, isSmoking);
 	}
 
 }
