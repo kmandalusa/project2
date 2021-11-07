@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 align="center">New Customer Registration</h1>
+    <form #f="ngForm" (ngSubmit)="submit(f.value)">
+        <div class="form-group">
+            <label for="name">Name</label><br>
+            <input type="text" name="name" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="email">Email</label><br>
+            <input type="text" name="email" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="Number">Phone Number</label><br>
+            <input type="text" name="mobile" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="password">Password</label><br>
+            <input type="password" name="password" class="form-control" ngModel>
+        </div>
+        <pre></pre>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
