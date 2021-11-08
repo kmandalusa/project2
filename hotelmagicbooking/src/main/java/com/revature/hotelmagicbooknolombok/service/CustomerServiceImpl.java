@@ -12,7 +12,7 @@ import com.revature.hotelmagicbooknolombok.model.Customer;
 import com.revature.hotelmagicbooknolombok.repo.CustomerRepository;
 
 /**
- * @author Dipanjali Ghosh
+ * @author Dipanjali Ghosh & Krishna Mandal
  *
  */
 @Service
@@ -32,8 +32,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void save(Customer customer) {
-		customerRepository.save(customer);
+	public Customer save(Customer customer) {
+		return customerRepository.save(customer);
 	}
 
 	@Override
@@ -44,6 +44,11 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public void delete(int id) {
 		customerRepository.deleteById(id);
+	}
+
+	@Override
+	public Customer findByEmail(String email) {
+		return customerRepository.findByEmail(email);
 	}
 
 }

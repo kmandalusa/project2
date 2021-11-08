@@ -23,7 +23,7 @@ import com.revature.hotelmagicbooknolombok.service.CustomerService;
  *
  */
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CustomerController {
 
 	@Autowired
@@ -37,6 +37,11 @@ public class CustomerController {
 	@GetMapping("/customers/{id}")
 	public Customer getCustomerById(@PathVariable int id) {
 		return customerService.findByCustomerId(id);
+	}
+
+	@GetMapping("/customers/{email}")
+	public Customer getCustomerByEmail(@PathVariable String email) {
+		return customerService.findByEmail(email);
 	}
 
 	@PostMapping("/customers")
