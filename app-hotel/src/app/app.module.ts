@@ -8,6 +8,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import {FormsModule} from '@angular/forms';
+import { RoomDetailsComponent } from './room-details/room-details.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {FormsModule} from '@angular/forms';
     CustomerComponent,
     LoginComponent,
     RegistrationFormComponent,
+    RoomDetailsComponent,
     
   ],
   imports: [
