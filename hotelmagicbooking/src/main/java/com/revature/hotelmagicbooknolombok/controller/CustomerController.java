@@ -39,7 +39,7 @@ public class CustomerController {
 		return customerService.findByCustomerId(id);
 	}
 
-	@GetMapping("/customers/{email}")
+	@GetMapping("/customers/searchByEmail/{email}")
 	public Customer getCustomerByEmail(@PathVariable String email) {
 		return customerService.findByEmail(email);
 	}
