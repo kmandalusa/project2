@@ -58,4 +58,26 @@ public class CustomerController {
 	public void deleteCustomerById(@PathVariable int id) {
 		customerService.delete(id);
 	}
+
+	@PostMapping("/login")
+	public void loginCustomer() {
+		/*
+		 * app.post("/login", ctx -> { String name = ctx.formParam("userId");
+		 * logger.info("User trying to login with userId: "+name);
+		 * logger.debug(" User trying to login with userId: "+name); employee =
+		 * EmployeeDAO.findById(name); if (Objects.isNull(employee)) {
+		 * ctx.redirect("error1.html"); // When employee/manager userId wrong } else {
+		 * String password = ctx.formParam("password");
+		 * logger.info("User trying to login with password: "+password); if
+		 * (employee.isPasswordMatch(password)) { if
+		 * (employee.getRole().equalsIgnoreCase("manager")) {
+		 * ctx.redirect("manager.html"); // When user is manager } else {
+		 * ctx.redirect("employee.html"); // when user is employee } } else {
+		 * 
+		 * ctx.redirect("error2.html"); // In case of wrong password }
+		 * logger.info("userId: " + name + " password: " + password); }
+		 * 
+		 * });
+		 */
+	}
 }

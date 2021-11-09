@@ -34,7 +34,7 @@ public class RoomEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "room_id")
-	private int roomID;
+	private int roomId;
 	@Column(name = "num_beds")
 	private int numBeds;
 	private BigDecimal price;
