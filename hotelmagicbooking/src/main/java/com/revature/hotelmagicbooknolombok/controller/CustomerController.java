@@ -63,13 +63,14 @@ public class CustomerController {
 	}
 
 	@PostMapping("/login")
-	public void loginCustomer(@RequestBody Customer customer) {
+	public Customer loginCustomer(@RequestBody Customer customer) {
 		Customer myCustomer = customerService.findByEmail(customer.getEmail());
 		log.info("Attempting to log in.");
 		
 		if(myCustomer == null)
 		{
 			log.info("Email not registered.");
+			return null;
 		}
 		else
 		{
@@ -77,10 +78,12 @@ public class CustomerController {
 			if(customer.getPassword().compareTo(myCustomer.getPassword()) != 0)
 			{
 				log.info("Invalid email or password.");
+				return null;
 			}
 			else
 			{
 				log.info("Valid login. Welcome " + myCustomer.getName());
+				return myCustomer;
 			}
 		}
 		/*
