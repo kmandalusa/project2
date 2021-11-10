@@ -18,12 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.hotelmagicbooknolombok.model.Customer;
 import com.revature.hotelmagicbooknolombok.service.CustomerService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author Dipanjali Ghosh & Krishna Mandal
  *
  */
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
+@Slf4j
 public class CustomerController {
 
 	@Autowired
@@ -60,7 +63,26 @@ public class CustomerController {
 	}
 
 	@PostMapping("/login")
-	public void loginCustomer() {
+	public void loginCustomer(@RequestBody Customer customer) {
+		Customer myCustomer = customerService.findByEmail(customer.getEmail());
+		log.info("Attempting to log in.");
+		
+		if(myCustomer == null)
+		{
+			log.info("Email not registered.");
+		}
+		else
+		{
+			log.info("Valid email.");
+			if(customer.getPassword().compareTo(myCustomer.getPassword()) != 0)
+			{
+				log.info("Invalid email or password.");
+			}
+			else
+			{
+				log.info("Valid login. Welcome " + myCustomer.getName());
+			}
+		}
 		/*
 		 * app.post("/login", ctx -> { String name = ctx.formParam("userId");
 		 * logger.info("User trying to login with userId: "+name);
