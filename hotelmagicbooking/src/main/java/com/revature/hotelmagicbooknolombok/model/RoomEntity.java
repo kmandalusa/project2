@@ -3,7 +3,7 @@
  */
 package com.revature.hotelmagicbooknolombok.model;
 
-import java.math.BigDecimal;
+//import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
