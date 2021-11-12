@@ -37,6 +37,13 @@ public class RoomEntity {
 	private int roomId;
 	@Column(name = "num_beds")
 	private int numBeds;
-	private BigDecimal price;
+	private double price;
+	public RoomEntity(int numBeds, double price) {
+		super();
+		this.numBeds = numBeds;
+		this.price = price;
+	}
+	
+	
 
 }

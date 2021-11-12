@@ -1,6 +1,6 @@
 Feature: New Customer Register
 
-@ignore
+//@ignore
 Scenario: Verification of New Customer Registration  
 When Register as name 'Krishna' with email 'krishna@abc.com',mobile '6578009430' and password 'krishna'
 Then Success
@@ -10,7 +10,7 @@ When Ask for all customers
 Then Return all customers
 
 Scenario: Verification of get Customer by email  
-Given  A customer email as 'krishna@abc.com'
+Given  A customer email as 'krishna1@abc.com'
 Then Return the said customer
 
 Scenario: Verification of Customer by wrong email  
