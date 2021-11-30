@@ -1,14 +1,11 @@
-# project2
+# project2: Magic Hotel Booking
 Hotel Room Booking System
 
 
 ## Project Description
 
 In this project:
-Employee can login and submit his/her reimbursement.
-Manager can login and view employees submitted reimbursement.
-Manager can approve or deny any reimbursement request.
-Manager can view a statistics page where he/she can see each employee's total , maximum, average reimbursement.
+Users can log in and look for hotels to check in to.
 
 ## Technologies Used
 
@@ -45,8 +42,8 @@ To-do list:
 
 
    
-* git clone https://github.com/kmandalusa/project1.git
-* cd project1
+* git clone https://github.com/kmandalusa/project2.git
+* cd project2
 * Before running the project you have to set up database server
 * It can use either Postgres or AWSPostgres RDS , according to use of database, hibernate.cfg.xml file needs to  be updated.
 * Have to create a database name "revature"
